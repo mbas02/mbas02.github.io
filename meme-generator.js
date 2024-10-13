@@ -77,13 +77,13 @@ function drawMeme() {
         ctx.fillStyle = 'black';
 
         // Self-fulfillment needs (top)
-        ctx.fillText('Self-fulfillment needs', canvas.width - 180, 50);
+        ctx.fillText('Self-fulfillment needs', canvas.width - 150, 50);
 
         // Psychological needs (middle)
-        ctx.fillText('Psychological needs', canvas.width - 180, 170);
+        ctx.fillText('Psychological needs', canvas.width - 220, 170);
 
         // Basic needs (bottom)
-        ctx.fillText('Basic needs', canvas.width - 180, 340);
+        ctx.fillText('Basic needs', canvas.width - 250, 340);
     }
 }
 
