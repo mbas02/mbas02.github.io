@@ -29,19 +29,19 @@ function drawMeme() {
         // Set coordinates and fill text in each section of the pyramid
 
         // Self-actualization (top layer)
-        ctx.fillText(textSelfActualization, canvas.width / 2, 50);
+        ctx.fillText(textSelfActualization, canvas.width / 2, 190);
 
         // Esteem needs (second layer)
-        ctx.fillText(textEsteem, canvas.width / 2, 120);
+        ctx.fillText(textEsteem, canvas.width / 2, 220);
 
         // Love and belonging needs (third layer)
-        ctx.fillText(textLoveBelonging, canvas.width / 2, 195);
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 250);
 
         // Safety needs (fourth layer)
-        ctx.fillText(textSafety, canvas.width / 2, 270);
+        ctx.fillText(textSafety, canvas.width / 2, 365);
 
         // Physiological needs (bottom layer)
-        ctx.fillText(textPhysiological, canvas.width / 2, 360);
+        ctx.fillText(textPhysiological, canvas.width / 2, 400);
     }
 
     // Draw the meme
