@@ -45,20 +45,12 @@ function drawMeme() {
         ctx.textAlign = 'center';
         ctx.fillStyle = 'black';
 
-        
-        ctx.fillText(textSelfActualization, canvas.width / 2, 190);
-
-     
-        ctx.fillText(textEsteem, canvas.width / 2, 250);
-
-     
-        ctx.fillText(textLoveBelonging, canvas.width / 2, 308);
-
-  
-        ctx.fillText(textSafety, canvas.width / 2, 368);
-
-        
-        ctx.fillText(textPhysiological, canvas.width / 2, 430);
+        // Set coordinates and fill text in each section of the pyramid
+        ctx.fillText(textSelfActualization, canvas.width / 2, 190); // Adjusted y-coordinate
+        ctx.fillText(textEsteem, canvas.width / 2, 250); // Adjusted y-coordinate
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 308); // Adjusted y-coordinate
+        ctx.fillText(textSafety, canvas.width / 2, 368); // Adjusted y-coordinate
+        ctx.fillText(textPhysiological, canvas.width / 2, 430); // Adjusted y-coordinate
 
     } else if (mode === 'singleColor') {
         // Get the value from the single text input
@@ -73,10 +65,25 @@ function drawMeme() {
         ctx.closePath();
         ctx.fill();
 
-        // Draw the text in the center of the triangle
+        // Draw the single input text in the center of the triangle
         ctx.font = 'bold 40px Arial';
         ctx.textAlign = 'center';
         ctx.fillStyle = 'black';
         ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
+
+        // Draw side labels
+        ctx.font = 'bold 18px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillStyle = 'black';
+
+        // Self-fulfillment needs (top)
+        ctx.fillText('Self-fulfillment needs', canvas.width - 180, 50);
+
+        // Psychological needs (middle)
+        ctx.fillText('Psychological needs', canvas.width - 180, 170);
+
+        // Basic needs (bottom)
+        ctx.fillText('Basic needs', canvas.width - 180, 340);
     }
 }
+
