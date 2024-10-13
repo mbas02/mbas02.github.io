@@ -8,10 +8,21 @@
 </head>
 <body>
     <div class="meme-generator">
-        <input type="text" id="topText" placeholder="Enter top text">
-        <input type="text" id="bottomText" placeholder="Enter bottom text">
+        <!-- Display the image before generating a meme -->
+        <img id="maslowImage" src="https://i.pinimg.com/originals/4d/50/02/4d50024568ad3c75674b4af2a8ca3698.png" alt="Maslow's Hierarchy of Needs" width="600">
+
+        <!-- Inputs for each layer -->
+        <input type="text" id="textSelfActualization" placeholder="Self-actualization">
+        <input type="text" id="textEsteem" placeholder="Esteem needs">
+        <input type="text" id="textLoveBelonging" placeholder="Love and belonging needs">
+        <input type="text" id="textSafety" placeholder="Safety needs">
+        <input type="text" id="textPhysiological" placeholder="Physiological needs">
+
+        <!-- Generate button -->
         <button onclick="drawMeme()">Generate Meme</button>
-        <canvas id="memeCanvas" width="600" height="446"></canvas>
+
+        <!-- Canvas for generating the meme -->
+        <canvas id="memeCanvas" width="600" height="446" style="display:none;"></canvas>
     </div>
     <script src="meme-generator.js"></script>
 </body>
