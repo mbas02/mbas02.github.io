@@ -32,16 +32,16 @@ function drawMeme() {
         ctx.fillText(textSelfActualization, canvas.width / 2, 190);
 
         // Esteem needs (second layer)
-        ctx.fillText(textEsteem, canvas.width / 2, 220);
+        ctx.fillText(textEsteem, canvas.width / 2, 250);
 
         // Love and belonging needs (third layer)
-        ctx.fillText(textLoveBelonging, canvas.width / 2, 250);
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 300);
 
         // Safety needs (fourth layer)
-        ctx.fillText(textSafety, canvas.width / 2, 365);
+        ctx.fillText(textSafety, canvas.width / 2, 368);
 
         // Physiological needs (bottom layer)
-        ctx.fillText(textPhysiological, canvas.width / 2, 400);
+        ctx.fillText(textPhysiological, canvas.width / 2, 440);
     }
 
     // Draw the meme
