@@ -1,29 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maslow's Hierarchy Meme Generator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="meme-generator">
-        <!-- Display the image before generating a meme -->
-        <img id="maslowImage" src="https://i.pinimg.com/originals/4d/50/02/4d50024568ad3c75674b4af2a8ca3698.png" alt="Maslow's Hierarchy of Needs" width="600">
+function drawMeme() {
+    var canvas = document.getElementById('memeCanvas');
+    var ctx = canvas.getContext('2d');
+    
+    // Get the values from the input fields
+    var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
+    var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
+    var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
+    var textSafety = document.getElementById('textSafety').value.toUpperCase();
+    var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
 
-        <!-- Inputs for each layer -->
-        <input type="text" id="textSelfActualization" placeholder="Self-actualization">
-        <input type="text" id="textEsteem" placeholder="Esteem needs">
-        <input type="text" id="textLoveBelonging" placeholder="Love and belonging needs">
-        <input type="text" id="textSafety" placeholder="Safety needs">
-        <input type="text" id="textPhysiological" placeholder="Physiological needs">
+    // Get the image element that is already loaded
+    var img = document.getElementById('maslowImage');
 
-        <!-- Generate button -->
-        <button onclick="drawMeme()">Generate Meme</button>
+    // Ensure the canvas is visible when generating the meme
+    canvas.style.display = 'block';
 
-        <!-- Canvas for generating the meme -->
-        <canvas id="memeCanvas" width="600" height="446" style="display:none;"></canvas>
-    </div>
-    <script src="meme-generator.js"></script>
-</body>
-</html>
+    // Draw the meme on the canvas when the image has fully loaded
+    img.onload = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'black';
+
+        // Set coordinates and fill text in each section of the pyramid
+
+        // Self-actualization (top layer)
+        ctx.fillText(textSelfActualization, canvas.width / 2, 60);
+
+        // Esteem needs (second layer)
+        ctx.fillText(textEsteem, canvas.width / 2, 130);
+
+        // Love and belonging needs (third layer)
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 210);
+
+        // Safety needs (fourth layer)
+        ctx.fillText(textSafety, canvas.width / 2, 280);
+
+        // Physiological needs (bottom layer)
+        ctx.fillText(textPhysiological, canvas.width / 2, 350);
+    };
+
+    // Draw image immediately if already loaded
+    if (img.complete) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'black';
+
+        // Set coordinates and fill text in each section of the pyramid
+
+        // Self-actualization (top layer)
+        ctx.fillText(textSelfActualization, canvas.width / 2, 60);
+
+        // Esteem needs (second layer)
+        ctx.fillText(textEsteem, canvas.width / 2, 130);
+
+        // Love and belonging needs (third layer)
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 210);
+
+        // Safety needs (fourth layer)
+        ctx.fillText(textSafety, canvas.width / 2, 280);
+
+        // Physiological needs (bottom layer)
+        ctx.fillText(textPhysiological, canvas.width / 2, 350);
+    }
+}

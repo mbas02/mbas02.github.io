@@ -15,27 +15,55 @@ function drawMeme() {
     // Ensure the canvas is visible when generating the meme
     canvas.style.display = 'block';
 
-    // Draw the meme on the canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    ctx.font = 'bold 20px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillStyle = 'black';
+    // Draw the meme on the canvas when the image has fully loaded
+    img.onload = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'black';
 
-    // Set coordinates and fill text in each section of the pyramid
+        // Set coordinates and fill text in each section of the pyramid
 
-    // Self-actualization (top layer)
-    ctx.fillText(textSelfActualization, canvas.width / 2, 60);
+        // Self-actualization (top layer)
+        ctx.fillText(textSelfActualization, canvas.width / 2, 60);
 
-    // Esteem needs (second layer)
-    ctx.fillText(textEsteem, canvas.width / 2, 130);
+        // Esteem needs (second layer)
+        ctx.fillText(textEsteem, canvas.width / 2, 130);
 
-    // Love and belonging needs (third layer)
-    ctx.fillText(textLoveBelonging, canvas.width / 2, 210);
+        // Love and belonging needs (third layer)
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 210);
 
-    // Safety needs (fourth layer)
-    ctx.fillText(textSafety, canvas.width / 2, 280);
+        // Safety needs (fourth layer)
+        ctx.fillText(textSafety, canvas.width / 2, 280);
 
-    // Physiological needs (bottom layer)
-    ctx.fillText(textPhysiological, canvas.width / 2, 350);
+        // Physiological needs (bottom layer)
+        ctx.fillText(textPhysiological, canvas.width / 2, 350);
+    };
+
+    // Draw image immediately if already loaded
+    if (img.complete) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'black';
+
+        // Set coordinates and fill text in each section of the pyramid
+
+        // Self-actualization (top layer)
+        ctx.fillText(textSelfActualization, canvas.width / 2, 60);
+
+        // Esteem needs (second layer)
+        ctx.fillText(textEsteem, canvas.width / 2, 130);
+
+        // Love and belonging needs (third layer)
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 210);
+
+        // Safety needs (fourth layer)
+        ctx.fillText(textSafety, canvas.width / 2, 280);
+
+        // Physiological needs (bottom layer)
+        ctx.fillText(textPhysiological, canvas.width / 2, 350);
+    }
 }
