@@ -1,53 +1,82 @@
+document.getElementById('modeSelector').addEventListener('change', function() {
+    var mode = this.value;
+    if (mode === 'pyramid') {
+        document.getElementById('pyramidInputs').style.display = 'block';
+        document.getElementById('singleInput').style.display = 'none';
+    } else if (mode === 'singleColor') {
+        document.getElementById('pyramidInputs').style.display = 'none';
+        document.getElementById('singleInput').style.display = 'block';
+    }
+});
+
 function drawMeme() {
     var canvas = document.getElementById('memeCanvas');
     var ctx = canvas.getContext('2d');
-
-    // Get the values from the input fields
-    var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
-    var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
-    var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
-    var textSafety = document.getElementById('textSafety').value.toUpperCase();
-    var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
+    var mode = document.getElementById('modeSelector').value;
 
     // Get the image element that is already loaded
     var img = document.getElementById('preloadedImage');
 
-    // Ensure the canvas is visible and the preloaded image is hidden
+    // Hide preloaded image and show canvas
     canvas.style.display = 'block';
     img.style.display = 'none';
 
-    // Function to draw the meme on the canvas
-    function drawOnCanvas() {
-        // Clear the canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // Draw the image on the canvas
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    // Clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (mode === 'pyramid') {
+        // Get the values from the pyramid input fields
+        var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
+        var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
+        var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
+        var textSafety = document.getElementById('textSafety').value.toUpperCase();
+        var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
+
+        // Draw the pyramid image on the canvas
+        if (img.complete) {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        } else {
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+        }
+
         ctx.font = 'bold 22px Arial';
         ctx.textAlign = 'center';
         ctx.fillStyle = 'black';
 
-        // Set coordinates and fill text in each section of the pyramid
-
-        // Self-actualization (top layer)
+        
         ctx.fillText(textSelfActualization, canvas.width / 2, 190);
 
-        // Esteem needs (second layer)
+     
         ctx.fillText(textEsteem, canvas.width / 2, 250);
 
-        // Love and belonging needs (third layer)
+     
         ctx.fillText(textLoveBelonging, canvas.width / 2, 308);
 
-        // Safety needs (fourth layer)
+  
         ctx.fillText(textSafety, canvas.width / 2, 368);
 
-        // Physiological needs (bottom layer)
+        
         ctx.fillText(textPhysiological, canvas.width / 2, 430);
-    }
 
-    // Draw the meme
-    if (img.complete) {
-        drawOnCanvas();
-    } else {
-        img.onload = drawOnCanvas;
+    } else if (mode === 'singleColor') {
+        // Get the value from the single text input
+        var singleText = document.getElementById('singleText').value.toUpperCase();
+
+        // Fill the entire triangle area with a single color (grey)
+        ctx.fillStyle = 'grey';
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2, 20); // Top of the triangle
+        ctx.lineTo(20, canvas.height - 20); // Bottom left
+        ctx.lineTo(canvas.width - 20, canvas.height - 20); // Bottom right
+        ctx.closePath();
+        ctx.fill();
+
+        // Draw the text in the center of the triangle
+        ctx.font = 'bold 40px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'black';
+        ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
     }
 }

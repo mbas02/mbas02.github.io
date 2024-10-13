@@ -8,16 +8,27 @@
 </head>
 <body>
     <div class="meme-generator">
-        <img id="preloadedImage" src="https://i.pinimg.com/originals/4d/50/02/4d50024568ad3c75674b4af2a8ca3698.png" alt="Maslow's Hierarchy of Needs" width="600" style="display:block; margin-bottom: 20px;">
+        <select id="modeSelector">
+            <option value="pyramid">Standard Needs</option>
+            <option value="singleColor">One Need Only</option>
+        </select>
 
-        <input type="text" id="textSelfActualization" placeholder="Layer 1 (Top)">
-        <input type="text" id="textEsteem" placeholder="Layer 2">
-        <input type="text" id="textLoveBelonging" placeholder="Layer 3">
-        <input type="text" id="textSafety" placeholder="Layer 4">
-        <input type="text" id="textPhysiological" placeholder="Layer 5">
+        <div id="pyramidInputs">
+          <input type="text" id="textSelfActualization" placeholder="Layer 1 (Top)">
+          <input type="text" id="textEsteem" placeholder="Layer 2">
+          <input type="text" id="textLoveBelonging" placeholder="Layer 3">
+          <input type="text" id="textSafety" placeholder="Layer 4">
+          <input type="text" id="textPhysiological" placeholder="Layer 5">
+        </div>
+
+        <div id="singleInput" style="display:none;">
+            <input type="text" id="singleText" placeholder="Enter your text here">
+        </div>
 
         <button onclick="drawMeme()">Generate Meme</button>
 
+        <img id="preloadedImage" src="https://i.pinimg.com/originals/4d/50/02/4d50024568ad3c75674b4af2a8ca3698.png" alt="Maslow's Hierarchy of Needs" width="600" style="display:block; margin-bottom: 20px;">
+        
         <canvas id="memeCanvas" width="600" height="446" style="display:none; margin-top: 20px;"></canvas>
     </div>
 
