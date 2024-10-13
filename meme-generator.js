@@ -1,28 +1,3 @@
-window.onload = function() {
-    // Get references to the HTML elements
-    var canvas = document.getElementById('memeCanvas');
-    var ctx = canvas.getContext('2d');
-    var img = document.getElementById('maslowImage');
-
-    // Draw the initial image on the canvas when the page loads
-    img.onload = function() {
-        drawInitialImage();
-    }
-
-    // Function to draw the initial image
-    function drawInitialImage() {
-        // Draw the image on the canvas as soon as it is loaded
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    }
-
-    // If the image is already loaded (due to caching), draw it immediately
-    if (img.complete) {
-        drawInitialImage();
-    }
-};
-
-// Function to draw the meme with the user-provided text
 function drawMeme() {
     var canvas = document.getElementById('memeCanvas');
     var ctx = canvas.getContext('2d');
@@ -46,26 +21,26 @@ function drawMeme() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         // Draw the image on the canvas
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        ctx.font = 'bold 20px Arial';
+        ctx.font = 'bold 22px Arial';
         ctx.textAlign = 'center';
         ctx.fillStyle = 'black';
 
-        // Set coordinates and fill text in each section of the pyramid
+        // Adjusted y-coordinates to properly align text in each section
 
         // Self-actualization (top layer)
-        ctx.fillText(textSelfActualization, canvas.width / 2, 60);
+        ctx.fillText(textSelfActualization, canvas.width / 2, 50);
 
         // Esteem needs (second layer)
-        ctx.fillText(textEsteem, canvas.width / 2, 130);
+        ctx.fillText(textEsteem, canvas.width / 2, 120);
 
         // Love and belonging needs (third layer)
-        ctx.fillText(textLoveBelonging, canvas.width / 2, 210);
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 195);
 
         // Safety needs (fourth layer)
-        ctx.fillText(textSafety, canvas.width / 2, 280);
+        ctx.fillText(textSafety, canvas.width / 2, 270);
 
         // Physiological needs (bottom layer)
-        ctx.fillText(textPhysiological, canvas.width / 2, 350);
+        ctx.fillText(textPhysiological, canvas.width / 2, 360);
     }
 
     // Draw the meme
@@ -75,3 +50,4 @@ function drawMeme() {
         img.onload = drawOnCanvas;
     }
 }
+
