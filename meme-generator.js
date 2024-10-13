@@ -10,10 +10,11 @@ function drawMeme() {
     var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
 
     // Get the image element that is already loaded
-    var img = document.getElementById('maslowImage');
+    var img = document.getElementById('preloadedImage');
 
-    // Ensure the canvas is visible when generating the meme
+    // Ensure the canvas is visible and the preloaded image is hidden
     canvas.style.display = 'block';
+    img.style.display = 'none';
 
     // Function to draw the meme on the canvas
     function drawOnCanvas() {
@@ -25,7 +26,7 @@ function drawMeme() {
         ctx.textAlign = 'center';
         ctx.fillStyle = 'black';
 
-        // Adjusted y-coordinates to properly align text in each section
+        // Set coordinates and fill text in each section of the pyramid
 
         // Self-actualization (top layer)
         ctx.fillText(textSelfActualization, canvas.width / 2, 50);
@@ -50,4 +51,3 @@ function drawMeme() {
         img.onload = drawOnCanvas;
     }
 }
-
