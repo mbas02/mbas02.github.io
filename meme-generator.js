@@ -34,7 +34,7 @@ function drawMeme() {
     var textSafety = document.getElementById('textSafety').value.toUpperCase();
     var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
 
-    // Get the image element that   is already loaded
+    // Get the image element that is already loaded
     var img = document.getElementById('maslowImage');
 
     // Ensure the canvas is visible when generating the meme
