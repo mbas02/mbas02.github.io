@@ -1,28 +1,7 @@
-/* General body styling */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-}
-
-/* Hero Section */
-.hero {
-    background-color: #282c34;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    font-size: 48px;
-}
-
-.hero p {
-    font-size: 18px;
-}
-
-.cta-button {
-    background-color: #ff4500;
+/* General button styling */
+.cta-button, 
+.meme-generator button {
+    background-color: #ff4500; /* Base color */
     color: white;
     padding: 15px 30px;
     text-transform: uppercase;
@@ -30,37 +9,44 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 50px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-weight: bold;
+    letter-spacing: 1px;
+    outline: none; /* Removes outline on focus */
 }
 
-/* Meme generator at the bottom */
-.meme-section {
-    background-color: #f9f9f9;
-    padding: 50px 20px;
-    text-align: center;
+/* Gradient effect for a more modern feel */
+.cta-button {
+    background: linear-gradient(135deg, #ff7b00, #ff4500); /* Orange gradient */
 }
 
-/* Meme generator styling */
-.meme-generator {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+/* Hover effects for the buttons */
+.cta-button:hover, 
+.meme-generator button:hover {
+    background: linear-gradient(135deg, #ff4500, #ff7b00); /* Reverse the gradient on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
 }
 
-input[type="text"] {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: calc(100% - 24px); /* padding and border */
+/* Active state for button press feedback */
+.cta-button:active, 
+.meme-generator button:active {
+    transform: translateY(1px); /* Button pushes down slightly */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Slightly reduce the shadow */
 }
 
-canvas {
-    display: block;
-    margin-top: 20px;
-    border: 1px solid #ccc;
+/* Meme generator button styling */
+.meme-generator button {
+    background-color: #282c34; /* Darker background for contrast */
+    border-radius: 5px; /* More subtle rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
+/* Hover effect for meme generator button */
+.meme-generator button:hover {
+    background-color: #333841; /* Slightly lighter dark hover */
+    transform: scale(1.05); /* Slight size increase on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
