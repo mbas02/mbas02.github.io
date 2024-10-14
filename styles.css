@@ -184,13 +184,12 @@ canvas {
     font-family: 'Poppins', sans-serif; /* Apply Poppins to the footer */
 }
 
-/* Update for centering the pyramid image and beautifying the selector */
-
-/* Center the pyramid image under the "Generate Meme" button */
-.meme-generator img#preloadedImage {
+/* Center the pyramid image and canvas under the "Generate Meme" button */
+.meme-generator img#preloadedImage, 
+.meme-generator canvas#memeCanvas {
     display: block;
     margin: 20px auto; /* Add auto margins to center */
-    width: 600px; /* Adjust the width of the image */
+    width: 600px; /* Adjust the width of the image and canvas */
 }
 
 /* Beautify the Standard Needs/One Need Only selector */
