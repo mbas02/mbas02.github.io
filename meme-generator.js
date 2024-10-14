@@ -75,12 +75,20 @@ function drawOrangeOverlay(ctx) {
 function drawSingleNeedText(ctx) {
     var singleText = document.getElementById('singleText').value.toUpperCase();
 
-    ctx.font = 'bold 60px Arial';
+    // Start with a large font size
+    var fontSize = 60;
+
+    // Adjust the font size based on text length (reduce font size if text is longer than 19 characters)
+    if (singleText.length > 19) {
+        fontSize = Math.max(30, 60 - (singleText.length - 19) * 2); // Reduce font size based on extra characters
+    }
+
+    ctx.font = `bold ${fontSize}px Arial`;
     ctx.textAlign = 'center';
     ctx.fillStyle = 'black';
 
-    // Dynamically wrap the single text for the orange overlay
-    wrapText(ctx, singleText, ctx.canvas.width / 2, ctx.canvas.height / 2, 550, 60);
+    // Check if the text fits the canvas width, if not wrap it
+    wrapText(ctx, singleText, ctx.canvas.width / 2, ctx.canvas.height / 2, 550, fontSize + 10);
 }
 
 /**
@@ -96,36 +104,22 @@ function drawSingleNeedText(ctx) {
 function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
     var words = text.split(' ');
     var line = '';
-    var fontSize = parseInt(ctx.font.match(/\d+/), 10); // Get current font size
+    var lines = [];
 
-    // Reduce font size until the text fits within the specified maxWidth
-    while (true) {
-        var testLine = '';
-        var lines = [];
-        for (var n = 0; n < words.length; n++) {
-            var testLine = line + words[n] + ' ';
-            var testWidth = ctx.measureText(testLine).width;
+    for (var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + ' ';
+        var testWidth = ctx.measureText(testLine).width;
 
-            if (testWidth > maxWidth && n > 0) {
-                lines.push(line);
-                line = words[n] + ' ';
-            } else {
-                line = testLine;
-            }
+        if (testWidth > maxWidth && n > 0) {
+            lines.push(line);
+            line = words[n] + ' ';
+        } else {
+            line = testLine;
         }
-        lines.push(line);
-
-        if (lines.length * lineHeight <= ctx.canvas.height) {
-            break; // If it fits, stop reducing the font size
-        }
-
-        // If not, reduce the font size and try again
-        fontSize -= 2;
-        ctx.font = `bold ${fontSize}px Arial`;
-        line = ''; // Reset line
     }
+    lines.push(line);
 
-    // Now render the text
+    // Render the wrapped text lines
     for (var i = 0; i < lines.length; i++) {
         ctx.fillText(lines[i], x, y + (i * lineHeight));
     }
