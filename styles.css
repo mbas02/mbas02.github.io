@@ -76,7 +76,26 @@ body {
     color: #555;
 }
 
-/* Meme Generator Section (Excluding this from Poppins font) */
+/* Meme Generator Section */
+.meme-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center; /* Center all content in the meme section */
+    margin: 40px auto;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.meme-section h2 {
+    font-size: 32px;
+    color: #282c34;
+    font-weight: 600;
+    text-align: center; /* Center the "Create Your Meme" text */
+    margin-bottom: 20px;
+}
+
 .meme-generator {
     font-family: Arial, sans-serif; /* Keep this section with default Arial */
     background: white;
@@ -98,6 +117,59 @@ canvas {
     display: block;
     margin-top: 20px;
     border: 1px solid #ccc;
+}
+
+/* General button styling */
+.cta-button, 
+.meme-generator button {
+    background-color: #ff4500; /* Base color */
+    color: white;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-weight: bold;
+    letter-spacing: 1px;
+    outline: none; /* Removes outline on focus */
+}
+
+/* Gradient effect for a more modern feel */
+.cta-button {
+    background: linear-gradient(135deg, #ff7b00, #ff4500); /* Orange gradient */
+}
+
+/* Hover effects for the buttons */
+.cta-button:hover, 
+.meme-generator button:hover {
+    background: linear-gradient(135deg, #ff4500, #ff7b00); /* Reverse the gradient on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+/* Active state for button press feedback */
+.cta-button:active, 
+.meme-generator button:active {
+    transform: translateY(1px); /* Button pushes down slightly */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Slightly reduce the shadow */
+}
+
+/* Meme generator button styling */
+.meme-generator button {
+    background-color: #282c34; /* Darker background for contrast */
+    border-radius: 5px; /* More subtle rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Hover effect for meme generator button */
+.meme-generator button:hover {
+    background-color: #333841; /* Slightly lighter dark hover */
+    transform: scale(1.05); /* Slight size increase on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer styling */
