@@ -8,22 +8,21 @@
 </head>
 <body>
     <div class="meme-generator">
-      <select id="modeSelector" style="margin-top: 20px;">
-        <option value="pyramid">Standard Needs</option>
-        <option value="singleColor">One Need Only</option>
-    </select>
-    
-
+        <select id="modeSelector" style="margin-top: 20px;">
+            <option value="pyramid">Standard Needs</option>
+            <option value="singleText">One Need Only</option>
+        </select>
+        
         <div id="pyramidInputs">
-          <input type="text" id="textSelfActualization" placeholder="Layer 1 (Top)">
-          <input type="text" id="textEsteem" placeholder="Layer 2">
-          <input type="text" id="textLoveBelonging" placeholder="Layer 3">
-          <input type="text" id="textSafety" placeholder="Layer 4">
-          <input type="text" id="textPhysiological" placeholder="Layer 5">
+            <input type="text" id="textSelfActualization" placeholder="Layer 1 (Top)">
+            <input type="text" id="textEsteem" placeholder="Layer 2">
+            <input type="text" id="textLoveBelonging" placeholder="Layer 3">
+            <input type="text" id="textSafety" placeholder="Layer 4">
+            <input type="text" id="textPhysiological" placeholder="Layer 5 (Bottom)">
         </div>
 
         <div id="singleInput" style="display:none;">
-            <input type="text" id="singleText" placeholder="Enter your text here">
+            <input type="text" id="singleText" placeholder="Enter your single need here">
         </div>
 
         <button onclick="drawMeme()">Generate Meme</button>
