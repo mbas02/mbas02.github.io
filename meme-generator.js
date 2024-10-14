@@ -39,9 +39,9 @@ function drawImageAndOverlay(ctx, img, mode) {
 function drawWatermark(ctx) {
     var watermarkText = "$NEED";
     ctx.font = 'bold 16px Arial';
-    ctx.textAlign = 'left';
+    ctx.textAlign = 'right';
     ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-    ctx.fillText(watermarkText, 10, ctx.canvas.height - 10);
+    ctx.fillText(watermarkText, ctx.canvas.width - 10, 20);
 }
 
 function drawPyramidText(ctx) {
