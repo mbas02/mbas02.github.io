@@ -26,79 +26,49 @@ function drawMeme() {
     // Draw the pyramid image on the canvas
     if (img.complete) {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        drawTextOrOverlay(ctx, mode);
     } else {
         img.onload = function() {
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            drawTextOrOverlay(ctx, mode);
         };
     }
+}
 
-    // Wait until the image is fully loaded before drawing the text
-    img.onload = function() {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+function drawTextOrOverlay(ctx, mode) {
+    if (mode === 'pyramid') {
+        var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
+        var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
+        var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
+        var textSafety = document.getElementById('textSafety').value.toUpperCase();
+        var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
 
-        if (mode === 'pyramid') {
-            // Get the values from the pyramid input fields
-            var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
-            var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
-            var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
-            var textSafety = document.getElementById('textSafety').value.toUpperCase();
-            var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
+        ctx.font = 'bold 22px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'black';
 
-            ctx.font = 'bold 22px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillStyle = 'black';
+        ctx.fillText(textSelfActualization, canvas.width / 2, 190);
+        ctx.fillText(textEsteem, canvas.width / 2, 250);
+        ctx.fillText(textLoveBelonging, canvas.width / 2, 308);
+        ctx.fillText(textSafety, canvas.width / 2, 368);
+        ctx.fillText(textPhysiological, canvas.width / 2, 430);
 
-            // Set coordinates and fill text in each section of the pyramid
-            ctx.fillText(textSelfActualization, canvas.width / 2, 190);
-            ctx.fillText(textEsteem, canvas.width / 2, 250);
-            ctx.fillText(textLoveBelonging, canvas.width / 2, 308);
-            ctx.fillText(textSafety, canvas.width / 2, 368);
-            ctx.fillText(textPhysiological, canvas.width / 2, 430);
+    } else if (mode === 'singleText') {
+        var singleText = document.getElementById('singleText').value.toUpperCase();
 
-        } else if (mode === 'singleText') {
-            // Get the value from the single text input
-            var singleText = document.getElementById('singleText').value.toUpperCase();
+        // Fill the triangle area with orange color
+        ctx.fillStyle = 'rgba(255, 165, 0, 0.8)'; // Orange with some transparency
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2, 20); // Top of the triangle
+        ctx.lineTo(20, canvas.height - 20); // Bottom left
+        ctx.lineTo(canvas.width - 20, canvas.height - 20); // Bottom right
+        ctx.closePath();
+        ctx.fill();
 
-            // Draw the single input text in the center of the triangle
-            ctx.font = 'bold 60px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillStyle = 'black';
-            ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
-
- 
-        }
-    };
-
-    // If the image is already loaded (cached), draw immediately
-    if (img.complete) {
-        if (mode === 'pyramid') {
-            var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
-            var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
-            var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
-            var textSafety = document.getElementById('textSafety').value.toUpperCase();
-            var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
-
-            ctx.font = 'bold 22px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillStyle = 'black';
-            ctx.fillText(textSelfActualization, canvas.width / 2, 190);
-            ctx.fillText(textEsteem, canvas.width / 2, 250);
-            ctx.fillText(textLoveBelonging, canvas.width / 2, 308);
-            ctx.fillText(textSafety, canvas.width / 2, 368);
-            ctx.fillText(textPhysiological, canvas.width / 2, 430);
-
-        } else if (mode === 'singleText') {
-            var singleText = document.getElementById('singleText').value.toUpperCase();
-
-            ctx.font = 'bold 60px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillStyle = 'black';
-            ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
-
-            ctx.font = 'bold 18px Arial';
-            ctx.textAlign = 'left';
-            ctx.fillStyle = 'black';
-
-        }
+        // Draw the single input text in the center of the triangle
+        ctx.font = 'bold 60px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'black';
+        ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
     }
 }
