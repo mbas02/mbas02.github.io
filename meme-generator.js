@@ -28,6 +28,7 @@ function drawMeme() {
         drawImageAndOverlay(ctx, img, mode);
     } else {
         img.onload = function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawImageAndOverlay(ctx, img, mode);
         };
     }
@@ -37,6 +38,7 @@ function drawImageAndOverlay(ctx, img, mode) {
     // Draw the original pyramid image
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
+    // Proceed with drawing based on the selected mode
     if (mode === 'pyramid') {
         drawPyramidText(ctx);
     } else if (mode === 'singleText') {
@@ -66,9 +68,9 @@ function drawPyramidText(ctx) {
 function drawOrangeOverlay(ctx) {
     ctx.fillStyle = 'rgba(255, 165, 0, 0.8)'; // Orange with some transparency
     ctx.beginPath();
-    ctx.moveTo(canvas.width / 2, 20); // Top of the triangle
-    ctx.lineTo(20, canvas.height - 20); // Bottom left
-    ctx.lineTo(canvas.width - 20, canvas.height - 20); // Bottom right
+    ctx.moveTo(ctx.canvas.width / 2, 20); // Top of the triangle
+    ctx.lineTo(20, ctx.canvas.height - 20); // Bottom left
+    ctx.lineTo(ctx.canvas.width - 20, ctx.canvas.height - 20); // Bottom right
     ctx.closePath();
     ctx.fill();
 }
@@ -79,5 +81,5 @@ function drawSingleNeedText(ctx) {
     ctx.font = 'bold 60px Arial';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'black';
-    ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
+    ctx.fillText(singleText, ctx.canvas.width / 2, ctx.canvas.height / 2);
 }
