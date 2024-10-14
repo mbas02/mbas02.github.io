@@ -1,3 +1,112 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #282c34; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Padding for proper spacing */
+}
+
+.hero h1 {
+    font-size: 48px; /* Large text for main header */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px; /* Smaller text for the sub-header */
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the icons */
+    margin-bottom: 30px; /* Space below the icons */
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Project Description Section */
+.description {
+    background-color: #ffffff; /* Light background */
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px;
+}
+
+.description h2 {
+    font-size: 32px;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Meme Generator Section */
+.meme-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.meme-section h2 {
+    font-size: 32px;
+    color: #282c34;
+    margin-bottom: 20px;
+}
+
+.meme-generator {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 24px); /* padding and border */
+}
+
+canvas {
+    display: block;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
+
 /* General button styling */
 .cta-button, 
 .meme-generator button {
@@ -50,36 +159,14 @@
     transform: scale(1.05); /* Slight size increase on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-/* Social icons styling */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Space between the icons */
-    margin-bottom: 30px; /* Space below the icons */
-}
 
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-}
-/* Hero Section */
-.hero {
-    background-color: #282c34; /* Dark background */
+/* Footer styling */
+.footer {
+    background-color: #282c34;
     color: white;
     text-align: center;
-    padding: 100px 20px; /* Padding for proper spacing */
-}
-
-.hero h1 {
-    font-size: 48px; /* Large text for main header */
-}
-
-.hero p {
-    font-size: 18px; /* Smaller text for the sub-header */
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
