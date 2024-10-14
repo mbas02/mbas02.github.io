@@ -61,7 +61,7 @@ function drawPyramidText(ctx) {
 
 function drawOrangeOverlay(ctx) {
     // Set a darker orange color with slightly less transparency
-    ctx.fillStyle = 'rgba(255, 140, 0, 0.7)'; // Darker orange with a little less transparency
+    ctx.fillStyle = 'rgba(255, 140, 0, 0.95)'; // Darker orange with a little less transparency
 
     // Adjust the coordinates to align perfectly with the black X markings
     ctx.beginPath();
