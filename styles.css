@@ -27,7 +27,6 @@ body {
     margin-bottom: 60px; /* Add space between text and social icons */
 }
 
-/* Social icons styling */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -38,15 +37,21 @@ body {
     transform: translateX(-50%); /* Center the icons horizontally */
 }
 
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-    transform: scale(1.1);
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px; /* Smaller heading on mobile */
+    }
+    
+    .hero p {
+        font-size: 16px; /* Adjust the paragraph font size */
+        margin-bottom: 40px; /* Reduce spacing */
+    }
+    
+    .social-icons img {
+        width: 30px; /* Reduce icon size */
+        height: 30px;
+    }
 }
 
 /* Project Description Section */
@@ -80,7 +85,7 @@ body {
 .meme-section {
     background-color: #f9f9f9;
     padding: 60px 20px;
-    text-align: center; /* Center all content in the meme section */
+    text-align: center;
     margin: 40px auto;
     width: 80%;
     max-width: 1000px;
@@ -113,83 +118,13 @@ input[type="text"] {
     width: calc(100% - 24px); /* padding and border */
 }
 
-canvas {
-    display: block;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-}
-
-/* General button styling */
-.cta-button, 
-.meme-generator button {
-    background-color: #ff4500; /* Base color */
-    color: white;
-    padding: 15px 30px;
-    text-transform: uppercase;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    font-weight: bold;
-    letter-spacing: 1px;
-    outline: none; /* Removes outline on focus */
-}
-
-/* Gradient effect for a more modern feel */
-.cta-button {
-    background: linear-gradient(135deg, #ff7b00, #ff4500); /* Orange gradient */
-}
-
-/* Hover effects for the buttons */
-.cta-button:hover, 
-.meme-generator button:hover {
-    background: linear-gradient(135deg, #ff4500, #ff7b00); /* Reverse the gradient on hover */
-    transform: translateY(-3px); /* Slight lift effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
-}
-
-/* Active state for button press feedback */
-.cta-button:active, 
-.meme-generator button:active {
-    transform: translateY(1px); /* Button pushes down slightly */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Slightly reduce the shadow */
-}
-
-/* Meme generator button styling */
-.meme-generator button {
-    background-color: #282c34; /* Darker background for contrast */
-    border-radius: 5px; /* More subtle rounded corners */
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
-/* Hover effect for meme generator button */
-.meme-generator button:hover {
-    background-color: #333841; /* Slightly lighter dark hover */
-    transform: scale(1.05); /* Slight size increase on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Footer styling */
-.footer {
-    background-color: #282c34;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 14px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    font-family: 'Poppins', sans-serif; /* Apply Poppins to the footer */
-}
-
 /* Center the pyramid image and canvas under the "Generate Meme" button */
 .meme-generator img#preloadedImage, 
 .meme-generator canvas#memeCanvas {
     display: block;
     margin: 20px auto; /* Add auto margins to center */
-    width: 600px; /* Adjust the width of the image and canvas */
+    max-width: 100%; /* Ensure the image and canvas fit within the screen */
+    height: auto;
 }
 
 /* Beautify the Standard Needs/One Need Only selector */
@@ -217,4 +152,56 @@ canvas {
 .meme-generator select#modeSelector:focus {
     border-color: #ff4500;
     outline: none;
+}
+
+/* Button styling */
+.meme-generator button {
+    background-color: #282c34; /* Darker background for contrast */
+    border-radius: 5px; /* More subtle rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.meme-generator button:hover {
+    background-color: #333841; /* Slightly lighter dark hover */
+    transform: scale(1.05); /* Slight size increase on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer styling */
+.footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Poppins', sans-serif; /* Apply Poppins to the footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .description {
+        width: 90%; /* Make the description more responsive */
+    }
+
+    .meme-section {
+        width: 90%; /* Reduce width of the meme section on smaller screens */
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px); /* Ensure text inputs scale on mobile */
+    }
+
+    /* Reduce padding in the meme generator */
+    .meme-generator {
+        padding: 20px;
+    }
+
+    /* Adjust button size for mobile */
+    .meme-generator button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
 }
