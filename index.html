@@ -5,10 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maslow's Hierarchy Meme Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline styles to adjust the dropdown and input positions */
+        #modeSelector {
+            width: 250px;
+            height: 40px;
+            font-size: 18px;
+            margin-top: 40px; /* Add some space above to push it down initially */
+            margin-bottom: 20px; /* Add space below to move inputs down */
+        }
+        #pyramidInputs, #singleInput {
+            margin-top: 20px; /* Move the input section further down */
+        }
+    </style>
 </head>
 <body>
     <div class="meme-generator">
-        <select id="modeSelector" style="margin-top: 20px;">
+        <select id="modeSelector">
             <option value="pyramid">Standard Needs</option>
             <option value="singleText">One Need Only</option>
         </select>
