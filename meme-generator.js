@@ -23,52 +23,61 @@ function drawMeme() {
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw the pyramid image on the canvas
+    // Draw the pyramid image on the canvas first
     if (img.complete) {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        drawTextOrOverlay(ctx, mode);
+        drawImageAndOverlay(ctx, img, mode);
     } else {
         img.onload = function() {
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            drawTextOrOverlay(ctx, mode);
+            drawImageAndOverlay(ctx, img, mode);
         };
     }
 }
 
-function drawTextOrOverlay(ctx, mode) {
+function drawImageAndOverlay(ctx, img, mode) {
+    // Draw the original pyramid image
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
     if (mode === 'pyramid') {
-        var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
-        var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
-        var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
-        var textSafety = document.getElementById('textSafety').value.toUpperCase();
-        var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
-
-        ctx.font = 'bold 22px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillStyle = 'black';
-
-        ctx.fillText(textSelfActualization, canvas.width / 2, 190);
-        ctx.fillText(textEsteem, canvas.width / 2, 250);
-        ctx.fillText(textLoveBelonging, canvas.width / 2, 308);
-        ctx.fillText(textSafety, canvas.width / 2, 368);
-        ctx.fillText(textPhysiological, canvas.width / 2, 430);
-
+        drawPyramidText(ctx);
     } else if (mode === 'singleText') {
-        var singleText = document.getElementById('singleText').value.toUpperCase();
-
-        // Fill the triangle area with orange color
-        ctx.fillStyle = 'rgba(255, 165, 0, 0.8)'; // Orange with some transparency
-        ctx.beginPath();
-        ctx.moveTo(canvas.width / 2, 20); // Top of the triangle
-        ctx.lineTo(20, canvas.height - 20); // Bottom left
-        ctx.lineTo(canvas.width - 20, canvas.height - 20); // Bottom right
-        ctx.closePath();
-        ctx.fill();
-
-        // Draw the single input text in the center of the triangle
-        ctx.font = 'bold 60px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillStyle = 'black';
-        ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
+        drawOrangeOverlay(ctx);
+        drawSingleNeedText(ctx);
     }
+}
+
+function drawPyramidText(ctx) {
+    var textSelfActualization = document.getElementById('textSelfActualization').value.toUpperCase();
+    var textEsteem = document.getElementById('textEsteem').value.toUpperCase();
+    var textLoveBelonging = document.getElementById('textLoveBelonging').value.toUpperCase();
+    var textSafety = document.getElementById('textSafety').value.toUpperCase();
+    var textPhysiological = document.getElementById('textPhysiological').value.toUpperCase();
+
+    ctx.font = 'bold 22px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'black';
+
+    ctx.fillText(textSelfActualization, canvas.width / 2, 190);
+    ctx.fillText(textEsteem, canvas.width / 2, 250);
+    ctx.fillText(textLoveBelonging, canvas.width / 2, 308);
+    ctx.fillText(textSafety, canvas.width / 2, 368);
+    ctx.fillText(textPhysiological, canvas.width / 2, 430);
+}
+
+function drawOrangeOverlay(ctx) {
+    ctx.fillStyle = 'rgba(255, 165, 0, 0.8)'; // Orange with some transparency
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2, 20); // Top of the triangle
+    ctx.lineTo(20, canvas.height - 20); // Bottom left
+    ctx.lineTo(canvas.width - 20, canvas.height - 20); // Bottom right
+    ctx.closePath();
+    ctx.fill();
+}
+
+function drawSingleNeedText(ctx) {
+    var singleText = document.getElementById('singleText').value.toUpperCase();
+
+    ctx.font = 'bold 60px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'black';
+    ctx.fillText(singleText, canvas.width / 2, canvas.height / 2);
 }
