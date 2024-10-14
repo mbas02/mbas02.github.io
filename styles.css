@@ -27,6 +27,7 @@ body {
     margin-bottom: 60px; /* Add space between text and social icons */
 }
 
+/* Social icons styling */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -35,23 +36,6 @@ body {
     bottom: 20px; /* Place the social icons at the bottom of the hero section */
     left: 50%;
     transform: translateX(-50%); /* Center the icons horizontally */
-}
-
-/* Adjust font size for smaller screens */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 32px; /* Smaller heading on mobile */
-    }
-    
-    .hero p {
-        font-size: 16px; /* Adjust the paragraph font size */
-        margin-bottom: 40px; /* Reduce spacing */
-    }
-    
-    .social-icons img {
-        width: 30px; /* Reduce icon size */
-        height: 30px;
-    }
 }
 
 /* Project Description Section */
@@ -110,21 +94,28 @@ body {
     margin-top: 20px;
 }
 
+/* Flexbox container for centering image and canvas */
+.meme-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+/* Center the pyramid image and canvas under the "Generate Meme" button */
+.meme-generator img#preloadedImage, 
+.meme-generator canvas#memeCanvas {
+    max-width: 100%; /* Ensure the image and canvas fit within the screen */
+    height: auto;
+}
+
 input[type="text"] {
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     width: calc(100% - 24px); /* padding and border */
-}
-
-/* Center the pyramid image and canvas under the "Generate Meme" button */
-.meme-generator img#preloadedImage, 
-.meme-generator canvas#memeCanvas {
-    display: block;
-    margin: 20px auto; /* Add auto margins to center */
-    max-width: 100%; /* Ensure the image and canvas fit within the screen */
-    height: auto;
 }
 
 /* Beautify the Standard Needs/One Need Only selector */
@@ -154,7 +145,6 @@ input[type="text"] {
     outline: none;
 }
 
-/* Button styling */
 .meme-generator button {
     background-color: #282c34; /* Darker background for contrast */
     border-radius: 5px; /* More subtle rounded corners */
@@ -194,12 +184,10 @@ input[type="text"] {
         width: calc(100% - 20px); /* Ensure text inputs scale on mobile */
     }
 
-    /* Reduce padding in the meme generator */
     .meme-generator {
         padding: 20px;
     }
 
-    /* Adjust button size for mobile */
     .meme-generator button {
         padding: 10px 15px;
         font-size: 14px;
