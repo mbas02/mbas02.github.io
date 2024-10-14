@@ -62,10 +62,12 @@ function drawPyramidText(ctx) {
 function drawOrangeOverlay(ctx) {
     // Set a darker orange color with slightly less transparency
     ctx.fillStyle = 'rgba(255, 140, 0, 0.7)'; // Darker orange with a little less transparency
+
+    // Adjust the coordinates to align perfectly with the black outline of the original pyramid markings
     ctx.beginPath();
-    ctx.moveTo(ctx.canvas.width / 2, 10); // Adjusted top of the triangle to align better
-    ctx.lineTo(30, ctx.canvas.height - 15); // Adjusted bottom left to align better
-    ctx.lineTo(ctx.canvas.width - 30, ctx.canvas.height - 15); // Adjusted bottom right to align better
+    ctx.moveTo(ctx.canvas.width / 2, 40); // Top of the triangle, moved slightly down to align perfectly
+    ctx.lineTo(60, ctx.canvas.height - 20); // Bottom left, moved inwards to align exactly with black marking
+    ctx.lineTo(ctx.canvas.width - 60, ctx.canvas.height - 20); // Bottom right, moved inwards to align exactly with black marking
     ctx.closePath();
     ctx.fill();
 }
