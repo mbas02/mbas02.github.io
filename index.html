@@ -5,19 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maslow's Hierarchy of $NEEDs</title>
     <link rel="icon" type="image/png" href="image.png">
-    <!-- Link to Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Hero Section -->
     <div class="hero">
-        <!-- Headline Text -->
         <h1>Maslow's Hierarchy of $NEEDs</h1>
         <p>What do you $NEED in life?</p>
-
-        <!-- Social Icons (moved below the text) -->
         <div class="social-icons">
             <a href="https://x.com/needsonsol" target="_blank">
                 <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="X" title="Follow us on X">
@@ -33,30 +27,22 @@
             </a>
         </div>
     </div>
-
-    <!-- Project Description Section -->
     <div class="description">
         <h2>What is this?</h2>
         <img src="image.png" alt="Spiritual Pyramid" class="main-image">
         <p>Maslow’s hierarchy of needs is a motivational theory in psychology comprising a five-tier model of human needs, often depicted as hierarchical levels within a pyramid. The question is... what do you $NEED?</p>
     </div>
-
-    <!-- New "What do I do?" Section -->
     <div class="description">
         <h2>What do I do?</h2>
         <p>Well, you should probably grab some $NEED, our contract address is *****pump. After that, generate some $NEED pyramids below to share with your friends!</p>
     </div>
-
-    <!-- Meme Generator Section -->
     <div class="meme-section">
         <h2>Enter your $NEED(s)</h2>
-
         <div class="meme-generator">
             <select id="modeSelector">
                 <option value="pyramid">Standard Needs</option>
                 <option value="singleText">One Need Only</option>
             </select>
-
             <div id="pyramidInputs">
                 <input type="text" id="textSelfActualization" placeholder="Layer 1 (Top)">
                 <input type="text" id="textEsteem" placeholder="Layer 2">
@@ -64,27 +50,19 @@
                 <input type="text" id="textSafety" placeholder="Layer 4">
                 <input type="text" id="textPhysiological" placeholder="Layer 5">
             </div>
-
             <div id="singleInput" style="display:none;">
                 <input type="text" id="singleText" placeholder="Enter your single need here">
             </div>
-
             <button onclick="drawMeme()">Generate Meme</button>
-
-            <!-- Flex container for image and canvas -->
             <div class="meme-display">
                 <img id="preloadedImage" src="https://i.pinimg.com/originals/4d/50/02/4d50024568ad3c75674b4af2a8ca3698.png" alt="Maslow's Hierarchy of Needs" width="600">
                 <canvas id="memeCanvas" width="600" height="446" style="display:none;"></canvas>
             </div>
         </div>
     </div>
-
     <script src="meme-generator.js"></script>
-
-    <!-- Footer Section -->
     <div class="footer">
         &copy; 2024 $NEED on Solana. Disclaimer. $NEED is a memecoin so treat it as such. Don’t risk money you are afraid of losing. The price may go up or it may go down. We are not responsible for the price of the token.
     </div>
-
 </body>
 </html>
