@@ -68,3 +68,18 @@
 .social-icons img:hover {
     transform: scale(1.1); /* Slight zoom on hover */
 }
+/* Hero Section */
+.hero {
+    background-color: #282c34; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Padding for proper spacing */
+}
+
+.hero h1 {
+    font-size: 48px; /* Large text for main header */
+}
+
+.hero p {
+    font-size: 18px; /* Smaller text for the sub-header */
+}
