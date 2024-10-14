@@ -183,3 +183,39 @@ canvas {
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     font-family: 'Poppins', sans-serif; /* Apply Poppins to the footer */
 }
+
+/* Update for centering the pyramid image and beautifying the selector */
+
+/* Center the pyramid image under the "Generate Meme" button */
+.meme-generator img#preloadedImage {
+    display: block;
+    margin: 20px auto; /* Add auto margins to center */
+    width: 600px; /* Adjust the width of the image */
+}
+
+/* Beautify the Standard Needs/One Need Only selector */
+.meme-generator select#modeSelector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    margin-bottom: 20px; /* Add space below the selector */
+    appearance: none; /* Hide default browser styles */
+    background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22/%3E%3C/svg%3E') no-repeat right 10px center;
+    background-color: white;
+    background-size: 12px;
+    background-position: calc(100% - 10px) center;
+}
+
+/* Add hover effect to the select element */
+.meme-generator select#modeSelector:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust the appearance for different states of the selector */
+.meme-generator select#modeSelector:focus {
+    border-color: #ff4500;
+    outline: none;
+}
