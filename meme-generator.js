@@ -98,9 +98,7 @@ function drawMeme() {
             ctx.font = 'bold 18px Arial';
             ctx.textAlign = 'left';
             ctx.fillStyle = 'black';
-            ctx.fillText('Self-fulfillment needs', canvas.width - 150, 50);
-            ctx.fillText('Psychological needs', canvas.width - 220, 170);
-            ctx.fillText('Basic needs', canvas.width - 250, 340);
+
         }
     }
 }
