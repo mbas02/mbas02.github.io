@@ -6,51 +6,48 @@
     <title>Maslow Meme Generator - Token Style</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Hero section styling */
-        .hero {
-            background-color: #282c34;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
+        /* Social icons styling */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between the icons */
+            margin-bottom: 30px; /* Space below the icons */
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-
-        .cta-button {
-            background-color: #ff4500;
-            color: white;
-            padding: 15px 30px;
-            text-transform: uppercase;
-            font-size: 18px;
-            border: none;
+        .social-icons img {
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            border-radius: 50px;
+            transition: transform 0.3s ease;
         }
 
-        /* Meme generator at the bottom */
-        .meme-section {
-            background-color: #f9f9f9;
-            padding: 50px 20px;
-            text-align: center;
+        .social-icons img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
         }
-
     </style>
 </head>
 <body>
 
     <!-- Hero Section -->
     <div class="hero">
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://twitter.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_X_%28formerly_Twitter%29.svg" alt="X/Twitter">
+            </a>
+            <a href="https://telegram.org" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram">
+            </a>
+            <a href="https://dexscreener.com" target="_blank">
+                <img src="https://dexscreener.com/static/images/icons/favicon-96x96.png" alt="Dexscreener">
+            </a>
+            <a href="https://pump.fun" target="_blank">
+                <img src="https://pump.fun/favicon.png" alt="Pump.fun">
+            </a>
+        </div>
+
         <h1>Welcome to the Maslow Meme Generator</h1>
         <p>Create your own hierarchy of needs memes in seconds.</p>
-        <button class="cta-button">Get Started</button>
     </div>
 
     <!-- Project Description Section -->
@@ -72,11 +69,11 @@
             </select>
 
             <div id="pyramidInputs">
-                <input type="text" id="textSelfActualization" placeholder="Need 1 (Top)">
-                <input type="text" id="textEsteem" placeholder="Need 2">
-                <input type="text" id="textLoveBelonging" placeholder="Need 3">
-                <input type="text" id="textSafety" placeholder="Need 4">
-                <input type="text" id="textPhysiological" placeholder="Need 5">
+                <input type="text" id="textSelfActualization" placeholder="Layer 1 (Top)">
+                <input type="text" id="textEsteem" placeholder="Layer 2">
+                <input type="text" id="textLoveBelonging" placeholder="Layer 3">
+                <input type="text" id="textSafety" placeholder="Layer 4">
+                <input type="text" id="textPhysiological" placeholder="Layer 5 (Bottom)">
             </div>
 
             <div id="singleInput" style="display:none;">
